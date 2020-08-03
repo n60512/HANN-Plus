@@ -6,8 +6,14 @@ import datetime
 
 class GatherOptions():
     def __init__(self):
-        parser = argparse.ArgumentParser(description="train or test HANN-Plus")
-        
+        parser = argparse.ArgumentParser(description="HANN-Plus model")
+
+        parser.add_argument(
+            "--model", 
+            default = "rpm", 
+            choices = ["rpm", "rgm"],
+            )
+
         parser.add_argument(
             "--mode", 
             default="train", 

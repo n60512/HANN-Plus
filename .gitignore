@@ -152,3 +152,4 @@ HANN-Plus/data/toys_festtext_subEmb.vec
 
 HANN-Plus/log/origin/*/Loss/Confusion.Matrix/*.png
 HANN-Plus/log/origin/*/GenerateSentences/*/*/insert.sql
+HANN-Plus/backup/*
