@@ -11,6 +11,6 @@ if __name__ == '__main__':
         _train_RPM(args)
         pass
     elif(args.model == 'rgm'):
-        _train_RPM(args)
+        _train_RGM(args)
         pass
     pass
