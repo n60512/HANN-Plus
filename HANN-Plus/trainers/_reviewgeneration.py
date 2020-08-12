@@ -8,8 +8,8 @@ import sys
 import tqdm
 import random
 from rouge import Rouge
-from utils.model import IntraReviewGRU, DecoderGRU, HANNiNet
-from trainers.setup import train_test_setup
+from models.model import IntraReviewGRU, DecoderGRU, HANNiNet
+from models.setup import train_test_setup
 from visualization.attention_visualization import Visualization
 from torchnlp.metrics import get_moses_multi_bleu
 

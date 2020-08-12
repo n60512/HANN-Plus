@@ -4,9 +4,9 @@ from torch import optim
 
 import tqdm
 import random
-from utils.model import IntraReviewGRU, SubNetwork, PredictionLayer
-from utils._wtensorboard import _Tensorboard
-from trainers.setup import train_test_setup
+from models.model import IntraReviewGRU, SubNetwork, PredictionLayer
+from models._wtensorboard import _Tensorboard
+from models.setup import train_test_setup
 
 import itertools
 import matplotlib.pyplot as plt
