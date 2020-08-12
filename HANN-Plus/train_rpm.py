@@ -1,13 +1,10 @@
-from utils import options
-from utils._ratingregression import RatingRegresstion
+from trainers._ratingregression import RatingRegresstion
 from preprocessing import rpm_preprocess
-
 import torch
 
 # Use cuda
 USE_CUDA = torch.cuda.is_available()
 device = torch.device("cuda" if USE_CUDA else "cpu")
-# args = options.GatherOptions().parse()
 
 def _train_RPM(args):
 
@@ -25,9 +22,4 @@ def _train_RPM(args):
             epoch_to_store = args.epoch_to_store,
             pretrain_word_embedding = pretrain_word_embedd
             )    
-
-    pass
-
-if __name__ == "__main__":
-    # _train_RPM()
     pass

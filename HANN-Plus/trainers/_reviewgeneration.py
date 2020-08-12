@@ -4,11 +4,12 @@ from torch import optim
 import nltk
 from nltk.corpus import stopwords
 
+import sys
 import tqdm
 import random
 from rouge import Rouge
 from utils.model import IntraReviewGRU, DecoderGRU, HANNiNet
-from utils.setup import train_test_setup
+from trainers.setup import train_test_setup
 from visualization.attention_visualization import Visualization
 from torchnlp.metrics import get_moses_multi_bleu
 
@@ -436,17 +437,20 @@ class ReviewGeneration(train_test_setup):
 
         print('Models built and ready to go!')
 
-        RMSE = 99
+        RMSE = sys.maxsize
         _flag = True
         _freeze_param = False
 
         # Training model
         for Epoch in range(self.training_epoch):
 
+            # freeze_param
             if(_flag):
                 if RMSE < 1.076 and Epoch>2:
                     _flag = False
                     _freeze_param = True
+                    pass
+                pass
 
             # Run a training iteration with batch
             hann_group_loss, decoder_group_loss = self._train_iteration_grm(

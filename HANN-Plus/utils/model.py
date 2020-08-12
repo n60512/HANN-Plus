@@ -2,18 +2,6 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-    ### Concat. bi-gru hidden
-        # self.concat_bigru = nn.Linear(self.hidden_size * 2, hidden_size)
-
-        # _bigru_method = 'concat'
-        # if(_bigru_method == 'sum'):
-        #     # Sum bidirectional GRU outputs
-        #     outputs = outputs[:, :, :self.hidden_size] + outputs[:, : ,self.hidden_size:]
-        # elif(_bigru_method == 'concat'):
-        #     outputs = torch.cat((outputs[:, :, :self.hidden_size], outputs[:, : ,self.hidden_size:]), 2)
-        #     stop = 1
-        #     outputs = F.relu(self.concat_bigru(outputs))
-
 class IntraReviewGRU(nn.Module):
     def __init__(self, hidden_size, embedding, itemEmbedding, userEmbedding, n_layers=1, dropout=0, latentK = 64, method = 'dualFC'):
         super(IntraReviewGRU, self).__init__()

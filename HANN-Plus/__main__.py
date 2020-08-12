@@ -2,7 +2,7 @@
 
 from train_rgm import _train_RGM
 from train_rpm import _train_RPM
-from utils import options
+import options
 
 args = options.GatherOptions().parse()
 

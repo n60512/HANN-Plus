@@ -1,6 +1,6 @@
 from .preprocessing import Preprocess
-from utils._ratingregression import RatingRegresstion
-from utils._reviewgeneration import ReviewGeneration
+from trainers._ratingregression import RatingRegresstion
+from trainers._reviewgeneration import ReviewGeneration
 from gensim.models import KeyedVectors
 
 import torch

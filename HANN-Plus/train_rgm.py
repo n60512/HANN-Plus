@@ -1,13 +1,10 @@
-from utils import options
-from utils._reviewgeneration import ReviewGeneration
+from trainers._reviewgeneration import ReviewGeneration
 from preprocessing import rgm_preprocess
-
 import torch
 
 # Use cuda
 USE_CUDA = torch.cuda.is_available()
 device = torch.device("cuda" if USE_CUDA else "cpu")
-args = options.GatherOptions().parse()
 
 def _train_RGM(args):
 
@@ -31,9 +28,4 @@ def _train_RGM(args):
             pretrain_wordVec = pretrain_word_embedd,
             _use_coverage = _use_coverage
             )
-
-    pass
-
-if __name__ == "__main__":
-    # _train_RGM(args)
     pass
