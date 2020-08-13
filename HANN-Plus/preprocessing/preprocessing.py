@@ -8,20 +8,6 @@ import tqdm
 import pickle
 from utils.DBconnector import DBConnection
 
-# PAD_token = 0  # Used for padding short sentences
-# NUM_token = 1
-
-# class Voc:
-#     def __init__(self, name):
-#         self.name = name
-#         self.word2index = {}
-#         self.word2count = {}
-#         self.index2word = {PAD_token: "PAD", NUM_token: "<number>"}
-#         self.num_words = 2
-
-#         self.word2count["PAD"] = 1
-#         self.word2count["<number>"] = 1
-
 PAD_token = 0  # Used for padding short sentences
 
 class Voc:
@@ -110,7 +96,6 @@ class user:
             self.reviewerID2index[id_] = self.num_reviewerIDs
             self.index2reviewerID[self.num_reviewerIDs] = id_
             self.num_reviewerIDs += 1   
-
 
 class Preprocess:
     def __init__(self, hidden_size=300, setence_max_len=80):
