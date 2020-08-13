@@ -9,11 +9,12 @@ import tqdm
 import random
 from rouge import Rouge
 from models.model import IntraReviewGRU, DecoderGRU, HANNiNet
-from models.setup import train_test_setup
+# from models.setup import train_test_setup
+from .base import TrainerSetup
 from visualization.attention_visualization import Visualization
 from torchnlp.metrics import get_moses_multi_bleu
 
-class ReviewGeneration(train_test_setup):
+class ReviewGeneration(TrainerSetup):
     def __init__(self, device, net_type, save_dir, voc, prerocess, 
         training_epoch=100, latent_k=32, batch_size=40, hidden_size=300, clip=50,
         num_of_reviews = 5,
@@ -348,6 +349,7 @@ class ReviewGeneration(train_test_setup):
             # _ep ='11'  # 0701 full interaction pre-train
             _ep ='12'  # 0705 _all_interaction6_item.rgm.full.turn1.8.1 PRETRAIN
             _ep ='36'  # 12800
+            _ep ='4'   # 08/12
             IntraGRU, InterGRU = self._load_pretrain_item_net(pretrain_model_path, _ep)
 
             # Use appropriate device

@@ -6,14 +6,15 @@ import tqdm
 import random
 from models.model import IntraReviewGRU, SubNetwork, PredictionLayer
 from models._wtensorboard import _Tensorboard
-from models.setup import train_test_setup
+# from models.setup import train_test_setup
+from .base import TrainerSetup
 
 import itertools
 import matplotlib.pyplot as plt
 from sklearn.metrics import confusion_matrix
 import numpy as np
 
-class RatingRegresstion(train_test_setup):
+class RatingRegresstion(TrainerSetup):
     def __init__(self, device, net_type, save_dir, voc, prerocess, 
         training_epoch=100, latent_k=32, batch_size=40, hidden_size=300, clip=50,
         num_of_reviews = 5, 
