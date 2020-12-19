@@ -2,7 +2,7 @@
 
 This is our implementation for the paper:
 
-[Explainable Recommendation System for Solving Review Loss](http://etds.lib.ntnu.edu.tw/cgi-bin/gs32/gsweb.cgi/ccd=mpCGdV/record?r1=1&h1=0)
+[Explainable Recommendation System for Solving Review Loss](http://doi.org/10.6345/NTNU202000953)
 
 Author: Sean Chen (n60512@gmail.com)
 
